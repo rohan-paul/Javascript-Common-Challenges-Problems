@@ -13,6 +13,11 @@ _gh_pages
 *.zip
 *.vi
 *~
+*.~
+.~lock*
+*/.~lock*
+.~lock.*#
+*.~lock*
 
 # OS or Editor folders
 .DS_Store
@@ -40,10 +45,11 @@ validation-report.json
 node_modules
 
 # Ignore all logfiles and tempfiles.
-*~
 !/log/.keep
 /tmp
 /.gems
 
 testing-code-3.js
 testing-scribling-code.js
+testing-code-1.js
+Cracking-The-Coding-Interview-Note-Gitignore-IT.odt

@@ -19,6 +19,3 @@ if(!Array.prototype.indexOf) {
 
 /*My Own learning note - Note that when variable startFromIndex < 0, we are updating its value by adding it with length of the array - based on the official definition of this argument when its negative - "it is taken as the offset from the end of the array". And "the array is still searched from front to back" So if startFromIndex is passed a value of -1 and the array has a length of 3, the indexOf function will start its searching from index position of 1 towards right.
   */
-
-var arr = [1, 2, 3, 4];
-console.log(arr.indexOf(2));

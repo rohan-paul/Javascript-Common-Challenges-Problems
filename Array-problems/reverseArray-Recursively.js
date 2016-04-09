@@ -10,3 +10,15 @@ function reverseArray(arr, indx, str) {
 
 var arr1 = ['car', 'boat', 'bike', 'motorbike'];
 console.log(reverseArray(arr1, arr1.length, ""));
+
+// Alternative to reverse an array with the 'z' pattern matching library
+
+require('z');
+
+var myReverse = list => {
+  return list.matches (
+    ()           => [],                          //match empty list (to check list ending)
+    (head, tail) => myReverse(tail).concat(head) //match list head/tail to create reversed list recusively
+  )
+}
+console.log(myReverse(['car', 'boat', 'bike', 'motorbike']));
