@@ -1,0 +1,22 @@
+{
+  "name": "js-cookbook-practicing-code",
+  "version": "1.0.0",
+  "description": "This repo is just a collection of my JavaScript codes purely for my own learning and practicing random codes from various books (mainly JavaScript Cookbook) and other problem sources.",
+  "main": "testing-code-3.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rohan-paul/JS-CookBook-and-Random-JS-Code-For-Practicing.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rohan-paul/JS-CookBook-and-Random-JS-Code-For-Practicing/issues"
+  },
+  "homepage": "https://github.com/rohan-paul/JS-CookBook-and-Random-JS-Code-For-Practicing#readme",
+  "dependencies": {
+    "z": "0.0.5"
+  }
+}
