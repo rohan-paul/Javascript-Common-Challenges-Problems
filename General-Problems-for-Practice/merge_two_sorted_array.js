@@ -1,7 +1,7 @@
 // merge two sorted array into a single sorted array 
 
 /*Solution steps
-A> 
+
 */
 /*function mergeSortedArray(a, b) {
 	for (var i = 0; i < b.length; i++) {
@@ -36,11 +36,11 @@ function mergeSortedArray(a, b) {
 
 	/* A> Now the above while loop will stop its execution, as soon as one of the array's all elements have been pushed to the new array ( i.e. sorted ). Leaving the case if the other condition of the while loop still is valid (e.g. indexB is still < b.length ). 
 
-	B> This is the case for that array which will have the highest numerical value 
+	B> This will be the case for that array which will have the highest numerical value. 
 
-	C> So, to include that terminal case, I have to check this same condition again after the while loop complete its runs.
+	C> So, to include that terminal case into the final sorted array, I have to check this same condition again after the while loop complete its runs.
 
-	D) And concat that particular array's rest of the values sliced from that indes till the end of values.
+	D) And concat that particular array's rest of the values sliced from that index till the end of values.
 	*/
 
 	if (indexB < b.length) {
