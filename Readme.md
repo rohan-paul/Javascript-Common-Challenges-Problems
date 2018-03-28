@@ -1,1 +1,1 @@
-This repo is a collection of common JavaScript problems, for my own learning and practicing.
+A collection of common JavaScript problems, for my own learning and practicing.
