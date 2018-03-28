@@ -1,10 +1,19 @@
-function leftRotateArray (array, rotationNumber) {
+/* The problem here gives, by how many steps the array will be rotated, and NOT by how many positions the Array will be rotated.
+
+A left rotation operation on an array of size shifts each of the array’s elements unit to the left. For example, if 2 left rotations are performed on array [1, 2, 3, 4, 5], then the array would become [3, 4, 5, 1, 2].
+
+The tests expe
+
+This solution, where a positive n rotates the array to the left, and a negative n to the right  */
+
+function leftRotateArray (array, rotationSteps) {
     // check if the array is long enough to rotate
     if (array.length < 2) {
         return array.slice(0);
     }
-    // calculate the number of rotation to do
-    var n = rotationNumber % array.length;
+    // calculate the number of rotation to do.
+    // But still we do this extra step, just to check if there's any need to rotate the array at all, with the code in the next line. Because, if I need to to rotate the array, 5000 times, it would take a while (code's O(n)). And in the end, the rotated array might be back where it started, making all those rotation pointless. So that seems like there are optimizations that can be made.
+    var n = rotationSteps % array.length;
 
     // Id n is 0, then no need to rotate at all, we can just return a copy of the array. And in this case of no rotation, the reason I am returning a copy instead of the original array (which could the code more optimized ) is because, the function should always return a copy in order to be consistent. If it sometimes doesn't, we don't know what you're getting.
 
@@ -25,4 +34,4 @@ function leftRotateArray (array, rotationNumber) {
     }
 }
 
-console.log(leftRotateArray([1, 2, 3, 4, 5], -4));
+console.log(leftRotateArray([1, 2, 3, 4, 5], 19));
