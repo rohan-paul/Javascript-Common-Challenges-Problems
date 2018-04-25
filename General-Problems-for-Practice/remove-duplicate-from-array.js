@@ -8,8 +8,8 @@ B> Create a new object/ associated array and also a new fresh empty array, to wh
 B> If i find an element for the first time i will set its value as true (that will tell me element added once.). if i find a element in the exists object, i will not insert it into the return array.*/
 
 function removeDuplicate(arr) {
-	var existsObj = {},
-		uniqueArr = [];
+	let existsObj = {};
+	let uniqueArr = [];
 
 	for (var i = 0; i < arr.length; i++) {
 		if(!existsObj[arr[i]]) {
