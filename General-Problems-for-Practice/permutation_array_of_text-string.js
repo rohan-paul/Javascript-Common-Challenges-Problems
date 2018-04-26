@@ -1,4 +1,4 @@
-/* This article looks at the interview question - Implement a function that gets all possible permutations (or orderings) of the characters in a string. For example for the input string "abc", the output will be
+/* Implement a function that gets all possible permutations (or orderings) of the characters in a string. For example for the input string "abc", the output will be
 
 [ "abc", "acb", "bac", "bca", "cab" and "cba" ]
 */
