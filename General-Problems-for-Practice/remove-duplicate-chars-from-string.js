@@ -23,7 +23,7 @@ function removeDuplicateChar(str) {
 }
 // Note above function will not take a number in the argument
 
-console.log(removeDuplicateChar('Lets become a pro developer in this year'));
+// console.log(removeDuplicateChar('Lets become a pro developer in this year'));
 
 
 /* Alternative-2 -
@@ -52,3 +52,23 @@ function findUniqueCharFromStr (str) {
 }
 
 // console.log(findUniqueCharFromStr('Lets become a pro developer in this year'));
+
+// Alternative - 4 - check each character's regExp that its not repeating
+
+function findUniqueCharFromStr(str) {
+    let uniqueStr = [];
+
+    while (str.length > 0) {
+        let char = str.charAt(0);
+        let re = new RegExp(char, "g");
+
+        if (str.match(re).length === 1) {
+            uniqueStr.push(char);
+        }
+        // Now that a unique character has been found, replace this character with empty string, so I can go to the next iteration with a reduced string.
+        str = str.replace(re, "");
+    }
+    return uniqueStr.join("");
+}
+
+console.log(findUniqueCharFromStr('Lets become a pro developer in this year'));
