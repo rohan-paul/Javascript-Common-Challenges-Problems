@@ -19,7 +19,7 @@ The empty array [} is the starting accumulator value for the reduce function, th
 
 // console.log(deepFlatten([1, [2], [[3], 4], 5]));
 // console.log(flatten([1, [2], [[3], 4], 5]));
-	
+
 
 // More performant functional solution
 var flattened = [].concat.apply([], [[1],[2,3],[4]]);
@@ -37,6 +37,7 @@ const flattenLargeArray = function(arr, result = []) {
   }
   return result;
 };
+
 
 console.log(flattenLargeArray([1, [1], [[3]]]));
 console.log(flattenLargeArray(Array(2).fill(Array(2).fill(Array(2).fill([1])))));
