@@ -44,7 +44,7 @@ if (
     city = data.user.personalInfo.addressDetails.primaryAddress;
 } */
 
-// Oliver Steele's Nested Object Access Pattern - for the same data above, if I have to access the 'name' property and not throw any err
+// Oliver Steele's Nested Object Access Pattern - for the same data above, if I have to access the 'name' property and not throw any error. But ofcourse with each more nesting level the parenthesis will continue to grow.
 
 const name2 = (((user1 || {}).personalInfo) || {}).name;
 console.log(name2);
