@@ -76,5 +76,5 @@ deepIteratorR = (target) => {
         }
     }
 }
-But the above will get me to "Maximum call stack size exceeded" because I am running the recursive deepIterator() function to the if(typeOf()) condition. So, when the first if condition is not satisfied, the else clause will be executed. And this will not stop at all because the nested (recursive) deepIterator() is again checking for the typeOf(tarket[key]) i.e. the typeOf the same variable.
+But the above will get me to "Maximum call stack size exceeded" because I am running the recursive deepIterator() function to the if(typeOf()) condition. So, when the first if condition is not satisfied, the else clause will be executed. And this will not stop at all because the nested (recursive) deepIterator() is again checking for the typeOf(target[key]) i.e. the typeOf the same variable.
 */
