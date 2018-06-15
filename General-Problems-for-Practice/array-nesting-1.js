@@ -1,4 +1,4 @@
-// Problem-1 - Given the below nested array, how would we get the letter 'e'?
+// Problem-1 - Given the below nested arrays, how would we get the letter 'e'?
 
 const letters = ['a', ['b', ['c', ['d', ['e']], 'f']]];
 
