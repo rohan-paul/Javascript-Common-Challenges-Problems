@@ -69,3 +69,29 @@ arrayIntersection_destructive = (arr1, arr2) => {
 // console.log(arrayIntersection_destructive ( [1, 2, 4, 5], [1, 3, 4, 8, 91] ));  // => [ 1, 4 ]
 // console.log(arrayIntersection_destructive ( [1, 2, 4, 5], [7, 12] ));      // => []
 // console.log(arrayIntersection_destructive ( [1, 2, 4, 5], [2, 7, 12] ));   // => [ 2 ]
+
+// Non destructive and non-sorted
+arrayIntersection4 = (arr1, arr2) => {
+
+  let intersection = [];
+
+  arr1 = arr1.sort((a, b) => a - b);
+  arr2 = arr2.sort((a, b) => a - b);
+
+  let i = j = 0;
+
+  while (i < arr1.length && j < arr2.length) {
+
+    if (arr1[i] < arr2[j]) i++;
+    else if (arr1[i] > arr2[j]) j++;
+    else {
+      intersection.push(arr1[i]);
+      i++, j++;
+    }
+  }
+  return intersection;
+}
+
+console.log(arrayIntersection4 ( [1, 5, 4, 2], [8, 91, 4, 1, 3] ));  // => [ 1, 4 ]
+console.log(arrayIntersection4 ( [1, 5, 4, 2], [7, 12] ));      // => []
+console.log(arrayIntersection4 ( [1, 5, 4, 2], [7, 12, 2] ));   // => [ 2 ]
