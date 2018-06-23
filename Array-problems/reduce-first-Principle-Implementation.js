@@ -18,12 +18,20 @@ console.log( reduce([1, 2, 3, 4], (a, b) => a + b , 0) );
 
 // Alternative solution with recursion
 
-reduce1 = (arr, funct, initialAccum) => {
+reduce_recursive = (arr, funct, initialAccum) => {
   if (arr.length === 0) {
     return initialAccum;
   } else {
-    return reduce1(arr.slice(1), funct, funct(arr[0], initialAccum))
+    return reduce_recursive(arr.slice(1), funct, funct(arr[0], initialAccum))
   }
 }
 
-console.log( reduce1([1, 2, 3, 4], (a, b) => a + b , 0) );
+console.log( reduce_recursive([1, 2, 3, 4], (a, b) => a + b , 0) );
+
+// Further compacting with Destructuring and ternary
+
+reduce_recursive1 = ([x, ...xs], funct, initialAccum) => {
+  return x === undefined ? initialAccum : reduce_recursive1(xs, funct, funct(initialAccum, x))
+}
+
+console.log( reduce_recursive1([1, 2, 3, 4], (a, b) => a + b , 0) );
