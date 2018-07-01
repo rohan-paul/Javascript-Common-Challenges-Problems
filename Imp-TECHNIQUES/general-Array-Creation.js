@@ -21,3 +21,5 @@ let dynamicItems = Array.from(new Array(5), (item, index) => index + 10)
 console.log(dynamicItems);  // => [ 10, 11, 12, 13, 14 ]
 
 // The map function is called with 2 arguments: current item and iteration index. The index parameter is used to generate numbers by increment: index + 1.
+
+// See this beautiful post - https://www.jstips.co/en/javascript/create-range-0...n-easily-using-one-line/
