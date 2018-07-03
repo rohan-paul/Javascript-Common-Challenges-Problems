@@ -1,4 +1,4 @@
-/* Problem statment - we would like to display numbers 1 to 5 at once sequentially. But we want to delay the output and have each number display 1 second apart from each other consecutively.
+/* Problem statement - we would like to display numbers 1 to 5 at once sequentially. But we want to delay the output and have each number display 1 second apart from each other consecutively.
 
 The below solution may come to mind first. But whats the output of the below code, whats wrong with it and fix it */
 
@@ -9,6 +9,8 @@ The below solution may come to mind first. But whats the output of the below cod
 // }
 
 /* A) The problem with the above code is, numbers are each outputting to console 1 second after another consecutively, but they are all 6s. So we now have 6 6 6 6 6 as the end result.
+
+The reason for this is because the setTimeout function creates a function (the closure) that has access to its outer scope, which is the for loop that contains the index i. After 1 second go by, the function is executed and it prints out the value of i, which at the end of the loop is at 6 because it cycles through 0, 1, 2, 3, 4, 5, 6 and the loop finally stops at 6 .
 
 B) The problem resides in the variable i we’re passing into setTimeout(). In this case, we’re simply passing the reference to the variable i, and not the actual value at the moment inside each loop. Therefore, by the time the setTimeout() function is executed (after 1, 2, 3, 4, and 5 seconds in this case), the for statement has already been executed and incremented i to the final value of 6.
 
