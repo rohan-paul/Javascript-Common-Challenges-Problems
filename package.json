@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/rohan-paul/JS-CookBook-and-Random-JS-Code-For-Practicing#readme",
   "dependencies": {
+    "es6-promise": "^4.2.4",
+    "isomorphic-fetch": "^2.2.1",
     "underscore": "^1.9.1",
     "z": "0.0.5"
   }
