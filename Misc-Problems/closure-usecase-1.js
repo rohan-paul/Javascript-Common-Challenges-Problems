@@ -33,4 +33,4 @@ showFullName = (first, last) => {
 	return constructFullName();
 }
 
-console.log(showFullName("Rohan", "Paul"));
+console.log(showFullName("Rohan", "Paul")); // => Your name is Rohan Paul
