@@ -14,3 +14,14 @@ compact = arr => arr.filter(i => i)
 //Alternative 2
 compact2 = arr => arr.filter(Boolean)
 // console.log(compact2([0, 1, false, 2, "", 3]));
+
+/* contains(array, value)  - Returns true if the value is present in the array.
+
+contains([1, 2, 3], 3) // => true */
+
+contains = (() => Array.prototype.includes
+  ? (arr, value) => arr.includes(value)
+  : (arr, value) => arr.some(elem => elem === value)
+)();
+
+console.log(contains([1, 2, 3], 3));
