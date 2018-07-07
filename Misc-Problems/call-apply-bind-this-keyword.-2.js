@@ -19,6 +19,8 @@ https://stackoverflow.com/questions/33308121/can-you-bind-arrow-functions
 
 You cannot "rebind" an arrow function. It will always be called with the context in which it was defined. And the whole purpose of call() and apply is to rebind the 'this' of a function.
 
+arrow functions) doesn't create new functional context and use context of a calling function.
+
 */
 
 displayDetails.call(car, "Steve");
