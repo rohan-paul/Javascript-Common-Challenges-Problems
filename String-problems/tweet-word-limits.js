@@ -17,7 +17,7 @@ cropTweeterSentence = str => {
       str = str.substring(0, 140);
     } else {
       // start the below for loop from 139-th position, because, I already know that the 140-th position is not as single space, so
-      // there's no further point to searh again at 140-th position for a single space
+      // there's no further point to search again at 140-th position for a single space
       for (let i = 139; i >=0; i--) {
         if (str[i] === " ") {
           // In below I am doing (i + 1), because substring() will not catch the end-position. But I want to finally return including the ending space
