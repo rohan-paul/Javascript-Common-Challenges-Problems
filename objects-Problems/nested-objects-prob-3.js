@@ -61,7 +61,7 @@ deepIterator = (target) => {
     }
 }
 
-deepIterator(numbers);
+// deepIterator(numbers);
 
 /* Note on the recursion -
 

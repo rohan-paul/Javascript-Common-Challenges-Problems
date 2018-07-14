@@ -33,7 +33,7 @@ const user1 = {
 const name1 = user1 && user1.personalInfo ? user1.personalInfo.name : null;
 // console.log(name1); // => null
 
-/* This is okay if your nested structure is simple, but if you have your data nested 5 or 6 levels deep, then your code will look really messy like this,
+// This is okay if your nested structure is simple, but if you have your data nested 5 or 6 levels deep, then your code will look really messy like this,
 
 let city;
 if (
@@ -42,7 +42,7 @@ if (
     data.user.personalInfo.addressDetails.primaryAddress
    ) {
     city = data.user.personalInfo.addressDetails.primaryAddress;
-} */
+}
 
 // Oliver Steele's Nested Object Access Pattern - for the same data above, if I have to access the 'name' property and not throw any error. But ofcourse with each more nesting level the parenthesis will continue to grow.
 
