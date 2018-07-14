@@ -2,7 +2,11 @@
 
 myProjectsArr is an array of objects, within which I also have the property 'employee' which is also an array of objects.
 
-Write a function to push 2 employees to each of the project with myProjectsArr . Note, unlike the other implementation, here the myEmployeeArr alreay has a property for projId, so I will only push to those porjects which matches this projId
+Write a function to push 2 employees to each of the project with myProjectsArr .
+
+Note, unlike the other implementation, here the myEmployeeArr alreay has a property for projId, so I will only push to those porjects which matches this projId.
+
+Also note, that
 
 */
 
@@ -10,11 +14,13 @@ var myProjectsArr = [{
     projId: '1',
     projName: 'A',
     employee: []
+
   },
   {
     projId: '2',
     projName: 'B',
     employee: []
+
   }
 ]
 
@@ -40,8 +46,8 @@ var myEmployeeArr = [{
   }
 ]
 
-console.log(myProjectsArr[0].employee);
-console.log(myProjectsArr[1].employee);
+console.log(myProjectsArr[0].employee);  // => []
+console.log(myProjectsArr[1].employee);   // => []
 
 // Generic function to add the nested array (which is itself an array of objects ) to the outer projectsArr ( which is and arr of objects )
 
