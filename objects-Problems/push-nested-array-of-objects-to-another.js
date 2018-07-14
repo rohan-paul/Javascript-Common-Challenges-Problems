@@ -1,4 +1,6 @@
-// projects is an array of objects, withing which I also have the property 'employee' which is also an array of objects.
+// Interview question faced on 14-July-2018- at Thrymer Software, Hyderabad
+// myProjectsArr is an array of objects, within which I also have the property 'employee' which is also an array of objects.
+// Write a function to push 2 employees to each of the project with myProjectsArr
 
 var myProjectsArr = [{
     projId: '1',
