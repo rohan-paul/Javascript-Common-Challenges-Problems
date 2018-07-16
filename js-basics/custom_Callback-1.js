@@ -1,4 +1,4 @@
-//Example -1 super simple example of custom callback. done() is a callback which I am definining seperately. 
+//Example -1 super simple example of custom callback. done() is a callback which I am definining seperately.
 done = () => {
 	console.log("Done from Callback");
 }
@@ -15,7 +15,7 @@ printNum = (num, callback) => {
 
 // printNum(5, done)
 
-// Example-2, where, I will pass the callback after invoking the function, without difining the callback seperately
+// Example-2, where, I will pass the callback after invoking the function, without defining the callback separately
 mySandwitch = (a, b, callback) => {
 
 	console.log(`Started eating my sandwitch.\n\nIt has: ${a} and ${b}`);

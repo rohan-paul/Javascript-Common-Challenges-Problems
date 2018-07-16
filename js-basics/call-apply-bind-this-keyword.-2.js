@@ -7,7 +7,7 @@ var car = {
   brand: 'Ford',
 }
 
- function displayDetails (ownerName) {
+function displayDetails (ownerName) {
     console.log(`${ownerName}, this is your car : ${this.regNo} ${this.brand}`);
 }
 

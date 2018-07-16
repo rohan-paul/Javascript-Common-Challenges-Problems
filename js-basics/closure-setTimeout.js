@@ -29,7 +29,11 @@ funcToExecute = (x) => {
 }
 
 for (var i = 1; i <= 5; i++) {
-    setTimeout(funcToExecute(i), 1000 * i);
+
+    setTimeout(funcToExecute(i), i * 500)
+
+
+
 }
 
 
