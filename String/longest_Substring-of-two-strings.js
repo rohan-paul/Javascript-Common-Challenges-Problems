@@ -8,8 +8,6 @@ C> From within the while loop, return the max-matched-string and update the init
 
 */
 
-
-
 longestSubstring = (s1, s2) => {
 
 	let longestSubstring = "", tempLongestSubsStr = "";
