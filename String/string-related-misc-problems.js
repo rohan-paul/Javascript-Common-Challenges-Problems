@@ -24,6 +24,7 @@ console.log(extractedList);
 // Problem Statement 2 - swap names so the last name is first
 var name = "Abe Lincoln";
 var re = /(\S+)\s(\S+)/;
+
 // Alternatively, I could also define re as /^(\w+)\s(\w+)$/;
 var swappedName = name.replace(re, "$2, $1");
 console.log(swappedName);

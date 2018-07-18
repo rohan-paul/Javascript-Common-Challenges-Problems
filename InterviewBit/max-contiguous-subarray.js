@@ -49,12 +49,12 @@ maxNonNegativeContiguousSubArray = A => {
 			result = resultContiguousSubArr[i]
 		}
 	}
-	return result;
+	return result.join(' ');
 }
 
 let myArr1 = [1, 2, 5, -7, 2, 3];
 
-console.log(maxNonNegativeContiguousSubArray(myArr1));
+console.log(maxNonNegativeContiguousSubArray(myArr1));  // => 1 2 5
 
 
 /*EXPLANATION ON >>  resultContiguousSubArr[i][j - i] =  A[j]  >> For a fixed i, say for example 0, j will be 0, 1, 2...
