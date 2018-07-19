@@ -1,6 +1,6 @@
-/* Calculate the sum of two integers a and b, without using the operator + and -
+// Calculate the sum of two integers a and b, without using the operator + and -
 
-ALGO -
+/* SOLUTION-1
 For Positive Num
 A> Conceptually, before number system was invented, and addition of 5 and 2 is like adding 5 things with 2 things. In other words, adding a length of 5 stuffs with a length of 2 stuffs.
 
@@ -64,5 +64,14 @@ sumWithoutOperator = (a, b) => {
     return result;
 }
 
-console.log(sumWithoutOperator(5, -2))
+// console.log(sumWithoutOperator(5, -2))
 
+// SOLUTION-2 - Assuming only positive numbers and same approach as above
+
+sumWithoutOperator1 = (a, b) => {
+    const arr1 = new Array(a).fill(true);
+    const arr2 = new Array(b).fill(true);
+    return arr1.concat(arr2).length;
+}
+
+console.log(sumWithoutOperator1(5, 2))
