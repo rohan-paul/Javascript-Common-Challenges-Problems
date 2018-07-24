@@ -1,4 +1,4 @@
-/* The de-facto unbiased shuffle algorithm is the Fisher-Yates (aka Knuth) Shuffle.
+/* BEST AND SIMPLE IN-PLACE SOLUTION >> The de-facto unbiased shuffle algorithm is the Fisher-Yates (aka Knuth) Shuffle.
 
 I can avoid duplicate selection by picking only remaining elements: pick a random number in the range [0, length - 1], where length starts at array.length and decreases by one with each iteration.
 
@@ -8,18 +8,19 @@ In other words, length represents the number of remaining elements to shuffle. C
 
 shuffleArr = arr => {
 
-    let currentIndex = arr.length, randomIndex;
+    let len = arr.length;
+    let randomIndex;
 
-    while (currentIndex) {
+    while (len) {
 
         // generate an index which is between 0 and (currentIndex - 1)
-        randomIndex = Math.floor(Math.random() * currentIndex);
+        randomIndex = Math.floor(Math.random() * len);
 
         // For the first iteration itselft, before the shuffling, ie. before swapping, I have to reduce currentIndex by 1 as currentIndex is the length of the array, and the max index of an array is ( array.length - 1)
 
-        currentIndex--;
+        len--;
 
-        [arr[currentIndex], arr[randomIndex] ] = [ arr[randomIndex], arr[currentIndex] ]
+        [arr[len], arr[randomIndex] ] = [ arr[randomIndex], arr[len] ]
 
     }
     return arr;
@@ -46,6 +47,28 @@ That is, 0 <= Math.random() < 1. The multiplier is what extends this to include 
 
 let myArr = [1, 2, 3, 4, 5]
 
-console.log(shuffleArr(myArr))
+// console.log(shuffleArr(myArr))
 
+/* The much less optimized version.
+Pick a random element from the array (in [0, n - 1]) and then check if you’ve shuffled that element already. This works, but it becomes increasingly slow as the remaining elements dwindle; I will keep randomly picking elements that have already been shuffled.
+*/
+shuffleArr_Slow = arr => {
 
+    let len = arr.length;
+    let shuffledArr = [];
+    var rand;
+
+    while (len) {
+
+        // Note in the below line I have to use arr.length, because I need to generate this rand number in a continuously decreasing range. But the len variable is being decreased inside the if loop which I dont have access here. However inside the if loop the array arr is being mutated by shrinking it. So arr.length will be reduces as well.
+        rand = Math.floor(Math.random() * arr.length);
+
+        if (rand in arr) {
+            shuffledArr.push(arr[rand]);
+            delete arr[rand];
+            len--;
+        }
+    }
+    return shuffledArr;
+}
+console.log(shuffleArr_Slow(myArr));
