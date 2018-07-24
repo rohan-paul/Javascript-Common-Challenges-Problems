@@ -1,8 +1,14 @@
-/* BEST AND SIMPLE IN-PLACE SOLUTION >> The de-facto unbiased shuffle algorithm is the Fisher-Yates (aka Knuth) Shuffle.
+/* BEST AND SIMPLE IN-PLACE SOLUTION IN O(n) time >> The de-facto unbiased shuffle algorithm is the Fisher-Yates (aka Knuth) Shuffle.
 
 I can avoid duplicate selection by picking only remaining elements: pick a random number in the range [0, length - 1], where length starts at array.length and decreases by one with each iteration.
 
 In other words, length represents the number of remaining elements to shuffle. Compact the remaining deck as I move elements so that I can easily pick out the next element for shuffling:
+
+THE MAIN THEORY BEHIND THE ELEMENT
+the number of shuffled elements (n - m) plus the number of remaining elements (m) is always equal to n. This means we can do the entire shuffle in-place, without any extra space! We use the back of the array to store the shuffled elements, and the front of the array to store the remaining elements. We don’t care about the order of the remaining elements as long as we sample uniformly when picking!
+
+To implement the in-place O(n) shuffle, then, pick a random remaining element (from the front) and place in its new location (in the back). The unshuffled element in the back is swapped to the front, where it waits for subsequent shuffling:
+
 */
 
 
@@ -50,7 +56,8 @@ shuffleArr_Slow = arr => {
 let myArr2 = [1, 2, 3, 4, 5]
 console.log(shuffleArr_Slow(myArr2));
 
-//Same algo as above with splice()
+/* Same algo as above with splice() . Still has relatively poor quadratic performance. The problem is that when I remove each element from the original array (array.splice), I have to shift all the subsequent elements down to compact the array. On average, that’s n / 2 elements to shift per element to shuffle, giving O(n2).
+*/
 shuffleArr_Slow_2 = arr => {
 
     let len = arr.length;
