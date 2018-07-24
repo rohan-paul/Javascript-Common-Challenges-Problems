@@ -1,4 +1,4 @@
-/* SOLUTION-1 Deep flattens an multi-diamentional array.
+/* SOLUTION-1 - BEST IMPLEMENTATION FOR Deep flattening a multi-diamensional array.
 
 Use recursion. Use Array.concat() with an empty array ([]) and the spread operator (...) to flatten an array. Recursively flatten each element that is an array.*/
 
@@ -10,7 +10,7 @@ const deepFlatten1 = arr => [].concat(...arr.map(toFlatten => {
 
 console.log(deepFlatten1([1, [2], [[3], 4], 5])); // => [ 1, 2, 3, 4, 5 ]
 
-// SOLUTION - 2 Same implementation using reduce() and without using arrow syntax
+// SOLUTION-2 - Same implementation using reduce() and without using arrow syntax
 
 const deepFlatten2 = arr => {
 	return arr.reduce((flat, yetToFlatten) => {

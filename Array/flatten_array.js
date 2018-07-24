@@ -1,6 +1,6 @@
-// Functional solution for flattening 2-D arrays - Works for 2-D arrays but DOES NOT FOR more multi-dimensional arrays
+// SMALLEST SIMPLEST Functional solution for flattening 2-D arrays - Works for 2-D arrays but DOES NOT FOR more multi-dimensional arrays
 
-const flattened1 = arr => [].concat.apply([], arr);
+const flattened1 = arr => [].concat(...arr);
 
 let myArr1 = [[1], [2], [3, 4], 5]
 let myArr2 = [[1], [2], [[3], 4], 5]
