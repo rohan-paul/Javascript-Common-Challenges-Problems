@@ -21,3 +21,4 @@ let add = function(a,b) {
 let add = (a,b) => a + b;
 
 // In the first example we write return a + b but in the fat arrow version we just wrote a + b. That’s because in the fat arrow syntax if it is on one line, the statement gets returned automatically without the need to use the return keyword.
+// There is no "thin arrow function".
