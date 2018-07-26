@@ -10,7 +10,7 @@ const profile = {
 	}
 }
 
-profile.getName() 
+// profile.getName() 
 
 /*OUTPUT 
 {}
@@ -29,7 +29,7 @@ const profile_1 = {
 	}
 }
 
-profile_1.getName()
+// profile_1.getName()
 
 /*OUTPUT 
 
@@ -38,8 +38,9 @@ tech
 
 */
 
-// To fix the above problem WHILE KEEPING THE ARROW SYNTAX. 
+// To fix the above problem, i.e. WHILE KEEPING THE ARROW SYNTAX OUTPUT THE EXPECTED OUPUT
 // In ES6, if we use fat arrow functions the value of 'this' inside a fat arrow function will be the same as the value of this outside the fat arrow function. It uses the value of 'this' from the surrounding code for its context. i.e. whatever 'this' points to in the surrounding code, this will point to in the function body of the fat arrow function.
+// So in the below solution, I am not using any 'this' at all
 
 const profile_2 = {
 
@@ -51,13 +52,32 @@ const profile_2 = {
 	}
 }
 
-profile_2.getName()
+// profile_2.getName()
 /*OUTPUT 
 
 {}
 tech
 
 */
+
+
+// ALTERNATIVE - 2 - To fix the above problem, i.e. WHILE KEEPING THE ARROW SYNTAX OUTPUT THE EXPECTED OUPUT
+
+// Declare a global variable so all the functions defined in this file will always have access to this variable
+// And then inside the function dont use any 'this' at ll.
+var name = 'paul' 
+
+const profile_3 = {
+
+	name: 'tech',
+
+	getName: () => {		
+		console.log(name);
+	}
+}
+
+profile_3.getName()
+
 
 /* KEY EXPLANATION - Like regular functions, Arrow function does not have a 'this' or their own, only regular function and global scope have 'this' of their own.
 
