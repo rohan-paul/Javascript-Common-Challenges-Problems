@@ -22,7 +22,7 @@ let obj_1 = {
     }
 };
 
-obj_1.sayLater();
+// obj_1.sayLater();
 
 /* OUTPUT
 
@@ -45,7 +45,8 @@ undefined
 /* EXPLANATION -
 The reason for outputting 'undefined' is that the value of this in a function depends on how the function is called. If its called as obj.sayLater(), the value of this is the calling context which in this case is obj.
 
-However the calling context (what 'this' will point to) for the anonymous function inside setTimeout is either...
+However the calling context (what 'this' will point to) for the anonymous function inside setTimeout is either of ...
+   
    A) In the browser it’s either undefined or the global object depending on if you are running in strict mode or not. or B) In node it’s an internal timeout object.
 
    C) In all cases however it isn’t going to be obj, so this.name is not going to return 'asim', it’s going to return undefined or raise an error.
@@ -62,7 +63,7 @@ let obj_3 = {
         setTimeout(() => {
             console.log(this)
             console.log(`${this.name}`)
-        }, 1000)
+        }, 500)
     }
 }
 

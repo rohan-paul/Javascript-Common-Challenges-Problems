@@ -1,4 +1,4 @@
-/*The function, named lcs, will return a string as small as a single character. "123" and "345" will return "3"
+/*The function, named lcs (longest common substring) , will return a string as small as a single character. "123" and "345" will return "3"
 
 Algo >> A> Initialize the longestSubStr to be an empty string. For each letter of s1, check each of letters of s2. So run 2 for loops
 
