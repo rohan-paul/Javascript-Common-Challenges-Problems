@@ -81,7 +81,7 @@ profile_3.getName()
 
 /* KEY EXPLANATION - Like regular functions, Arrow function does not have a 'this' or their own, only regular function and global scope have 'this' of their own.
 
-Which would mean that whenever 'this' would be referred in arrow funciton, it will start looking up the scope to find the value of this, or in this case, during look up it found, that the object named 'profile' is not having a 'this' of it's own. Hence, it went upto global scope, and binded to the value of 'this' from global scope, where it wont find anything for this.name. So undefined is the output.
+Which would mean that whenever 'this' would be referred in arrow funciton, it will start looking up the scope to find the value of this, or in this case, during look up it found, that the object named 'profile' is not having a 'this' of it's own. Hence, it went upto global scope, and binded to the value of 'this' from global scope, where it wont find anything for 'this.name'. So undefined is the output.
 
 
 

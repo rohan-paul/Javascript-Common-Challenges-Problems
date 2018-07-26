@@ -76,7 +76,7 @@ ES6_Asim
 
 VERY IMP NOTE  - The above arrow function ONLY works because its wrapped inside a regular function expression (ES5). Otherwise, as explained in the ES6_2.js that - Arrow function does not have a 'this' or their own, only regular function and global scope have 'this' of their own. 
 
-So, if I did not wrapp the above arrow function inside a regular ES-5 function, then it would be referring to a this.name in the global scope, >> and there would be no this.name in global scope, and the whole output will be undefined as show below 
+So, if I did not wrapp the above arrow function inside a regular ES-5 function, then it would be referring to a this.name in the global scope, >> and there would be no this.name in global scope, and the whole output will be 'undefined' as in the below implementation.
 
 */
 
