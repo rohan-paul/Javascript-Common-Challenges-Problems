@@ -1,6 +1,10 @@
 /* https://en.wikipedia.org/wiki/Currying
 
-n mathematics and computer science, currying is the technique of translating the evaluation of a function that takes multiple arguments (or a tuple of arguments) into evaluating a sequence of functions, each with a single argument.  */
+n mathematics and computer science, currying is the technique of translating the evaluation of a function that takes multiple arguments (or a tuple of arguments) into evaluating a sequence of functions, each with a single argument.  
+
+Currying is a process to reduce functions of more than one argument to functions of one argument with the help of lambda calculus.
+f(n, m) --> f'(n)(m)
+*/
 
 // simple add() funtion without currying
 add = (x, y) => x + y
