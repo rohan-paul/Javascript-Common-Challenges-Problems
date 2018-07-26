@@ -1,4 +1,5 @@
-/* Source Problem - https://youtu.be/E_hTGcx8o7g?t=3m24s
+/* Source Problem - https://youtu.be/E_hTGcx8o7g?t=3m24s - The Indian guy doing mock interview
+
 Given an array containing multiple number of max elements - count the number of max elements.
 
 so, given [ 1, 2, 2, 3, 4, 5, 4, 5] 
