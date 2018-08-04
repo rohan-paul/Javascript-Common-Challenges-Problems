@@ -58,7 +58,7 @@ const camelToTitle = s => {
 
 // Helper function for adding a space before all uppercase letters using regex
 // means replace each Uppercase letter with a single-space and the letter (no case change of that upper-case letter at this point)
-// This is also how a replace() function takes a callback
+// This is also a beautiful example how a replace() function takes a callback as its second parameter and  The function's result (return value) will be used as the replacement string.
 
 replaceCapWithSpaceAndCap = s => s.replace(/([A-Z])/, (match, replaceWith) => ` ${replaceWith}`)
 
@@ -69,3 +69,12 @@ replaceCapWithSpaceAndCap = s => s.replace(/([A-Z])/, (match, replaceWith) => ` 
 const camelCaseText = "the simplestThings in LIFE are alwaysThe best"
 
 console.log(camelToTitle(camelCaseText))
+
+
+/* https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace#Specifying_a_function_as_a_parameter#Specifying_a_function_as_a_parameter
+
+On passing a function as a second parameter to the replace() method
+
+You can specify a function as the second parameter. In this case, the function will be invoked after the match has been performed. The function's result (return value) will be used as the replacement string. Note that the function will be invoked multiple times for each full match to be replaced if the regular expression in the first parameter is global.
+
+*/

@@ -1,4 +1,4 @@
-/* search()
+/* PROB-1 search()
 
 str.search() returns the position of the first match or -1 if none found:
 So if Only a vowel is found in position-index-0 of the string, then '0' is returned. If the vowel is found in position-index-2 then '2' is returned.
@@ -25,7 +25,7 @@ The output from the above - is an array
 
     input – the subject string as the third element
 
-THE ARRAY MAY HAVE MORE THAN 3 ELEMENTS WHEN THE PARTO OF THE REGEXP HAS A (...) PARENTHESIS - (see below example)
+THE ARRAY MAY HAVE MORE THAN 3 ELEMENTS WHEN THE PART OF OF THE REGEXP HAS A (...) PARENTHESIS - (see below example)
 
 */
 
@@ -70,11 +70,39 @@ let result4 = str3.match(/JAVA(SCRIPT)/ig);
 
 console.log(result4)  // => [ 'JavaScript' ]
 /*
-If there are no matches, the call to match returns null
 Please note, that’s important. If there were no matches, the result is not an empty array, but null.
 
 Keep that in mind to evade pitfalls like trying to find the length of the returned array - If I do that, will get "TypeError: Cannot read property 'length' of null" */
 
 console.log(str3.match(/JAVAMM(SCRIPT)/ig));      // => null
 
-console.log(str3.match(/JAVAMM(SCRIPT)/ig).length);     // => null
+// console.log(str3.match(/JAVAMM(SCRIPT)/ig).length);     // => null
+
+/* PROB-2 - Example how a replace() function takes a callback as its second parameter and  The function's result (return value) will be used as the replacement string.
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace#Specifying_a_function_as_a_parameter#Specifying_a_function_as_a_parameter
+
+On passing a function as a second parameter to the replace() method
+
+You can specify a function as the second parameter. In this case, the function will be invoked after the match has been performed. The function's result (return value) will be used as the replacement string. Note that the function will be invoked multiple times for each full match to be replaced if the regular expression in the first parameter is global.
+
+[xyz] :	A character set. Matches any one of the enclosed characters. For example, '[abc]' matches the 'a' in "plain".
+\d	:  Matches a digit character. Equivalent to [0-9].
+[^xyz]	: A negative character set. Matches any character not enclosed. For example, '[^abc]' matches the 'p' in "plain".
+[^\d]  : So this will match any non-digit character
+\w  :	Matches any word character including underscore. Equivalent to '[A-Za-z0-9_]'.
+[^\w]  : Matches all non-word characters
+
+Write a function to make 'abc12345#$*%' to 'abc - 12345 - #$*%'  - That is, after a group of adjacent non-digit character put a ' - '
+Then do the same after each group of adjacent digit characters and then after gropu of non-word characters
+
+*/
+
+
+replacer = (match, p1, p2, p3, offset, string) => [ p1, p2, p3 ].join(' - ');
+
+// So now in the main replace function I have to pass 3 regExp parenthesized group which will give me 3 matched string by the 3 paranthesized captured group
+
+let newStr = 'abc12345#$*%'.replace(/([^\d]*)(\d*)([^\w*])/, replacer)
+
+console.log(newStr)
