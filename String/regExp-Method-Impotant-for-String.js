@@ -77,4 +77,4 @@ Keep that in mind to evade pitfalls like trying to find the length of the return
 
 console.log(str3.match(/JAVAMM(SCRIPT)/ig));      // => null
 
-console.log(str3.match(/JAVAMM(SCRIPT)/ig).length);      // => null
+console.log(str3.match(/JAVAMM(SCRIPT)/ig).length);     // => null
