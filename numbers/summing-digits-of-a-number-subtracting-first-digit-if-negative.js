@@ -22,17 +22,20 @@ sumDigits = num => {
   // SOLUTION-2 - Better -  Instead of splitting the string character-by-character, capture the digits, such that the first digit might be negative.
 
   sumDigits2 = num => {
-      num.match(/?-\d/g)
+      return num.toString()
+         .match(/-?\d/g)
          .map(s => parseInt(s))
          .reduce((accum, curr) => accum + curr)
   }
 
-  console.log(sumDigits(-316));  // => 4
+  console.log(sumDigits2(-316));  // => 4
 
 
   /* A) match() with global flag will return an array of all the matches like below -
 
   console.log("-234".match(/-?\d/g))  // => [ '-2', '3', '4' ]
+
+  But before applying match() - I have to convert to string
 
   B) parseInt() will take a string and convert to integer. And while converting a negative number will be converted to a negative number.
 
