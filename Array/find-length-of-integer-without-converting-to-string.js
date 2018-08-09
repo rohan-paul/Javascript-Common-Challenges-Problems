@@ -46,7 +46,7 @@ numberLength = s => (s + '').split('').reduce(a => a + 1, 0)
 
 console.log(numberLength(number))
 
-/* SOLUTION-4 USING LOGARITHM - https://stackoverflow.com/questions/14879691/get-number-of-digits-with-javascript/14879700
+/* SOLUTION-4  - BEST AND PERFECT SOLUTION - USING LOGARITHM - https://stackoverflow.com/questions/14879691/get-number-of-digits-with-javascript/14879700
 
 Logarithm Theory -
 
@@ -76,6 +76,25 @@ numLength_log = n => Math.max(Math.floor(Math.log10(Math.abs(n))), 0) + 1;
 
 console.log(numLength_log(number))
 
-/* Essentially, we start by getting the absolute value of the input to allow negatives values to work correctly. Then we run the through the log10 operation to give us what power of 10 the input is (if you were working in another base, you would use the logarithm for that base), which is the number of digits. Then we floor the output to only grab the integer part of that. Finally, we use the max function to fix decimal values (any fractional value between 0 and 1 just returns 1, instead of a negative number), and add 1 to the final output to get the count.
+/* Essentially, we start by getting the absolute value of the input to allow negatives values to work correctly. Then we run the through the log10 operation to give us what power of 10 the input is (if you were working in another base, you would use the logarithm for that base), which is the number of digits. Then we floor the output to only grab the integer part of that.
+Finally, we use the max function to fix decimal values (any fractional value between 0 and 1 just returns 1, instead of a negative number),
+
+Add 1 to the final output to get the count, because Math.log10() for a 5 digit no will give a result something like 4.some decimal, and applying Math.floor will make it one digit less than the total number of digits
+
+e.g. console.log(Math.log10(11111))  // => 4.045753147594141
+
+e.g. console.log(Math.log10(99999))  // => 4.999995657033466
 
 The above assumes (based on your example input) that you wish to count the number of digits in integers (so 12345 = 5, and thus 12345.678 = 5 as well). If you would like to count the total number of digits in the value (so 12345.678 = 8), then add this before the 'return' in either function above: */
+
+numLength_logModified = n => {
+
+    n = Number(String(n).replace(/[^0-9]/g, ''))
+
+    return Math.max(Math.floor(Math.log10(Math.abs(n))), 0) + 1;
+}
+
+let number1 = 1234.562
+console.log(numLength_logModified(number1))
+
+console.log(Math.log10(99999))
