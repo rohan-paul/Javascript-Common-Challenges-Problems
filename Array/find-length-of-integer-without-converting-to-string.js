@@ -52,7 +52,7 @@ Logarithm Theory -
 
 Say e.g. 10^a =  b then I say
 
-log(b) to the base 10 =  a
+log(b) =  a // to the base 10
 
 VERY IMP - Note the RHS of the log(num) is always the exponent. Thats why in the below implementation, log10(x) will give what power of 10 thE input number 'x' is
 

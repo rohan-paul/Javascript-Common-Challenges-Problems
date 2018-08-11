@@ -12,7 +12,9 @@ Output : "theseWords shouldGo inPairs"
 
 Trim > Convert the sentence to lowercase > and split into an array.
 
-Loop over every two words and create a camelcase pair off them.
+Run a for Loop over every two words by making the jump ( increment the counter 'i' by 2 elements instead of 1 )
+
+Inside the above for loop, upperCase the first letter of the second word
 
 Push the pairs into an empty array.
 

@@ -3,7 +3,7 @@
 let obj = {
 	"a": 1,
 	"b": 2,
-	"c": 3
+    "c": 3
 }
 
 console.log(obj.a);  // => 1
@@ -27,7 +27,7 @@ console.log(obj.hasOwnProperty('a')); //true
 console.log(obj.hasOwnProperty('toString')); //false
 
 
-/* The above 'obj' will store as its key-value the unique elements of the array (as keys) and a boolean (true for each key). Meaning for any duplicate elements of the given arrray obj[hasOwnProperty] will return false.
+/* The above 'obj' will store as its key-value the unique elements of the array (as keys) and a boolean (true for each key). Meaning for any duplicate elements of the given array obj[hasOwnProperty] will return false.
 
   Note - Bothe object.key and object[key] accomplish the same thing, i.e. returns the value of that key
   However, object.key only works if the key name is hardwired ( I mean not happening dynamically since it cannot change at run-time). It also does not work when the key is a number instead of a string.
@@ -41,9 +41,10 @@ console.log(obj.hasOwnProperty('toString')); //false
 
  // Write a function to return the key from an object given a value
  // Both Object.keys and Object.values will return me an array, so I can further apply find() or indexOf() methods on them
+
 findKeyFromValue1 = (obj, value) => Object.keys(obj).find(key => obj[key] === value);
 
-// console.log(findKeyFromValue1(obj, 2));  // => [ 1, 2, 3 ]
+console.log(findKeyFromValue1(obj, 2));  // => b
 
 // Next alternative to find the key given the value
 findKeyFromValue2 = (obj, value) => Object.keys(obj).filter(key => obj[key] === value)[0];
@@ -62,4 +63,4 @@ findKeyFromValue3 = (obj, value) => {
 	return Object.keys(obj)[Object.values(obj).indexOf(value)]
 }
 
-console.log(findKeyFromValue3(obj, 2));  // => [ 1, 2, 3 ]
+console.log(findKeyFromValue3(obj, 2));  // => b
