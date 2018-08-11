@@ -15,13 +15,21 @@ maxRepeatNum = arr => {
 
     // Now return the the key that has the max value, I have few option for that
 
-    // Option-1
-    return Object.keys(elemHash).reduce((a, b) => (elemHash[a] > elemHash[b]) ? a : b )  // => 5
+    // Option-1 - Getting key with the highest value from object
+    // return Object.keys(elemHash).reduce((a, b) => (elemHash[a] > elemHash[b]) ? a : b )  // => 5
 
-    //Option-2
-    // return Math.max(...(Object.keys(elemHash).map(i => )))
+
+    //Option-2 - Getting key with the highest value from object
+    let max = Math.max(...(Object.keys(elemHash).map(i => elemHash[i])))
+    // so max is now the highest value that I have in the entire object
+    // So, now I have to find the key given this highest value
+    return Object.keys(elemHash).filter(i => elemHash[i] === max)[0];  // => 5
+
 }
 
 let myArr = [ 1, 2, 1, 3, 5, 5, 8, 3, 5]
 
-console.log(maxRepeatNum(myArr));
+console.log(maxRepeatNum(myArr)); // => 5
+
+// In case you have many equal values and not only one maximum:
+
