@@ -1,27 +1,28 @@
 // Problem Statement - famous Interview Question - what the below function would print
 
-const profile = {
 
-	name: 'tech',
+const profile_fatArrow = {
 
-	getName: () => {
-		console.log(this);
-		console.log(this.name);
-	}
-}
+    name: 'profile_1-1tech',
 
-// profile.getName() 
+    getName: () => {
+      console.log(this);
+      console.log(this.name);
+    }
+  }
 
-/*OUTPUT 
+profile_fatArrow.getName()
+
+/*OUTPUT
 {}
 undefined
 */
 
-// To fix the above problem, convert the ES6 fat-arrow functon to regular ES-5 function
+// To fix the above problem, convert the ES6 fat-arrow function to regular ES-5 function
 
 const profile_1 = {
 
-	name: 'tech',
+	name: 'profile_2-tech',
 
 	getName: function () {
 		console.log(this);
@@ -31,10 +32,10 @@ const profile_1 = {
 
 // profile_1.getName()
 
-/*OUTPUT 
+/*OUTPUT
 
-{ name: 'tech', getName: [Function: getName] }
-tech
+{ name: 'profile_2-tech', getName: [Function: getName] }
+profile_2-tech
 
 */
 
@@ -44,19 +45,19 @@ tech
 
 const profile_2 = {
 
-	name: 'tech',
+	name: 'profile_2-tech',
 
 	getName: () => {
 		console.log(this);
-		console.log(profile.name);
+		console.log(profile_2.name);
 	}
 }
 
-// profile_2.getName()
-/*OUTPUT 
+profile_2.getName()
+/*OUTPUT
 
 {}
-tech
+profile_2-tech
 
 */
 
@@ -65,18 +66,18 @@ tech
 
 // Declare a global variable so all the functions defined in this file will always have access to this variable
 // And then inside the function dont use any 'this' at ll.
-var name = 'paul' 
+var name = 'tech-name-in-global-variable';
 
 const profile_3 = {
 
-	name: 'tech',
+  name: 'profile_3-tech',
 
-	getName: () => {		
-		console.log(name);
-	}
+  getName: () => {
+    console.log(name);
+  }
 }
 
-profile_3.getName()
+profile_3.getName() // => 'tech-name-in-global-variable'
 
 
 /* KEY EXPLANATION - Like regular functions, Arrow function does not have a 'this' or their own, only regular function and global scope have 'this' of their own.

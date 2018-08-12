@@ -31,5 +31,3 @@ let myArr = [ 1, 2, 1, 3, 5, 5, 8, 3, 5]
 
 console.log(maxRepeatNum(myArr)); // => 5
 
-// In case you have many equal values and not only one maximum:
-
