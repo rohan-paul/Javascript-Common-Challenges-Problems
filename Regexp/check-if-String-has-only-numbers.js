@@ -26,9 +26,15 @@ See below implementation of match()
 
 ^	Matches the position at the beginning of the input string. If the RegExp object's Multiline property is set, ^ also matches the position following '\n' or '\r'.
 
+
+PAUL VERY IMP - The same '^' char is used for as A negative range characters. Matches any character not in the specified range. For example, '[^a-z]' matches any character not in the range 'a' through 'z'. BUT NOTICE TO USE IT AS A NEGATIVE-RANGE-CHARACTER, I HAVE TO PUT IT INSIDE THE SQUARE BRACKET. See the opposite functionality of this function - check-if-String-has-NO-numbers.js
+
+
 $	>> Matches the position at the end of the input string. If the RegExp object's Multiline property is set, $ also matches the position preceding '\n' or '\r'.
 
-+ >> 	Matches the preceding character or subexpression one or more times. For example, 'zo+' matches "zo" and "zoo", but not "z". + is equivalent to {1,}.
+PAUL - So here, by including '^'	at the beginning of the input string AND '$' at the end of the input string - I am making sure, the 're' variable takes the whole input string from START-TO-END as the block to match. So when I pass this 're' to match() method - IT WILL MATCH THE ENTIRE INPUT ARGUMENT (i.e. the entire input string passed as argument ) and return null if the entire input argument does not match.
+
++ >> 	Matches the preceding character or sub-expression one or more times. For example, 'zo+' matches "zo" and "zoo", but not "z". + is equivalent to {1,}.
 
 So, by wrapping the regexp with a '^' and '$' I am making sure, that inside the entire string (from start to end) only numeric digits and nothing else.
 

@@ -6,7 +6,7 @@ printPrototypeProperties = obj => {
     let objProp = Object.getOwnPropertyNames(obj)
     console.log(objProp)
 
-    console.log(Object.keys(obj))
+    // console.log(Object.keys(obj))
 
     for (let i of objProp) {
 
