@@ -36,8 +36,6 @@ PAUL - So here, by including '^'	at the beginning of the input string AND '$' at
 
 + >> 	Matches the preceding character or sub-expression one or more times. For example, 'zo+' matches "zo" and "zoo", but not "z". + is equivalent to {1,}.
 
-So, by wrapping the regexp with a '^' and '$' I am making sure, that inside the entire string (from start to end) only numeric digits and nothing else.
-
 */
 
 
