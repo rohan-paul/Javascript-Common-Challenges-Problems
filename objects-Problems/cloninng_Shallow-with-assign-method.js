@@ -22,11 +22,22 @@ let clone_1_nested = Object.assign({}, myObj_1);
 
 /* PROBLEM - 1 WITH THE ABOVE APPROACH IS Object.assign() COPIES THE ORIGINAL OBJECT
 
-What is meant by shallow copy -
+What is meant by shallow copy - (Common Interview Question)
 
 An object is said to be shallow copied when the source object's top-level properties are copied without any reference but if the source-object contains a property whose value is another object (i.e. there's a nested object) then that nested object is copied as a reference. If the source value is a reference to an object, it only copies that reference value to the target object.
 
 A shallow copy will duplicate the top-level properties, but the nested object is shared between the original(source) and the copy(target). Lets see an example
+
+And what is meant by Deep copy -
+
+A deep copy copies all fields, and makes copies of dynamically allocated memory pointed to by the fields. A deep copy occurs when an object is copied along with the objects to which it refers.
+
+Lets take an example
+Shallow Copy: It makes a copy of the reference to X into Y. Think about it as a copy of X’s Address. So, the addresses of X and Y will be the same i.e. they will be pointing to the same memory location.
+
+Deep copy: It makes a copy of all the members of X, allocates different memory location for Y and then assigns the copied members to Y to achieve deep copy. In this way, if X vanishes Y is still valid in the memory.
+
+So with deep-copy the 2 objects are stored as two different locations in the memory space).
  */
 
 // First reassign the value of myObj_1.a to a new value
@@ -62,7 +73,7 @@ let myObj = Object.create(prototypeObj, {
 
 let shallowCloned = Object.assign({}, myObj)
 
-console.log(shallowCloned)  //  => { c: 3 }
+// console.log(shallowCloned)  //  => { c: 3 }
 
 /* EXPLANATION
 
@@ -97,3 +108,28 @@ cloneObjIteratively = obj => {
 3> The code above only copies enumerable properties of mainObj.
 
 4> If one of the properties in the original object is an object itself, then it will be shared between the copy and the original making their respective properties point to the same object. */
+
+
+// 3-RD WAY TO SHALLOW CLONE - ES6-SPREAD
+
+const original_Obj = {
+    a: 2,
+    b: 5,
+    c: {
+      x: 7,
+      y: 4,
+    },
+  }
+
+let clone = {...original_Obj}
+
+    console.log(original_Obj)   // => { a: 2, b: 5, c: { x: 7, y: 4 } }
+console.log(clone)      // => { a: 2, b: 5, c: { x: 7, y: 4 } }
+
+// after reassigning a nested object, I will see both original and clone getting the same update value again
+// which shows, thats this way is a shallow copy because the nested object was not create as a new copy
+// Just both referred the same nested object before and after copying / cloning
+original_Obj.c.x = 20;
+
+console.log(original_Obj)   // => { a: 2, b: 5, c: { x: 20, y: 4 } }
+console.log(clone)      // => { a: 2, b: 5, c: { x: 20, y: 4 } }
