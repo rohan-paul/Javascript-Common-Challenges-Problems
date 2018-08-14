@@ -1,3 +1,5 @@
+/* RETURN VALUE OF match() - If the string matches the expression, it will return an Array containing the entire matched string as the first element, followed by any results captured in parentheses. If there were no matches, null is returned. */
+
 let str2 = "Fame is the thirst of youth";
 
 let result = str2.match(/the/i);
