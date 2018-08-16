@@ -1,6 +1,6 @@
 // PROBLEM - Write a function that splits an array (first argument) into groups the length of size (second argument) and returns them as a multidimensional array
 
-/* SOLUTION-1  (taken from my chunky-moenky FreeCodeCamp - I liked this particular so very much - Create an empty array to hold the chunks called chunked_arr.
+/* SOLUTION-1  (taken from my chunky-monkey FreeCodeCamp - I liked this particular so very much - Create an empty array to hold the chunks called chunked_arr.
 Calculate the number of chunks - so if the arr is [1, 2, 3, 4, 5] and chunk is 2 then my final output should be - [ [ 1, 2 ], [ 3, 4 ], [ 5 ] ]
 
 That is there are 3 chunks. Which I get by doing < Math.ceil (5 / 2) >
@@ -63,4 +63,15 @@ index will take values from 0, 1, 2, 3 .... so for by case of ([1, 2, 3, 4, 5], 
 // I already have picked up the first 4 elements, so now, I want to pick up the next 2 (i.e. the fifth and sixth element) representedby index-4 and index-5. So I start at index-4 and end just before index-6
 3rd arr.slice(2*2, 2*2 + 2)
 
+
+Note on Array.from() - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/from
+
+// Since the array is initialized with `undefined` on each position,
+// the value of `v` below will be `undefined`
+
+Array.from({length: 5}, (v, i) => i);  // => [0, 1, 2, 3, 4]
+
+Paul - So the above function just returns the index value (represented by the second argument to the callback 'i' for each element of the newly creted array with Array.from() - So effectively this function turns the newly created array where all element are initialized to be 'undefined' to take up a real actual value which in this case is the index value
+
+So, in my above function, I am feeling up each of the elements of that Array ( that I created with Array.from ) with a new array, which is being sliced from the arragy given in the top level function argument.
  */
