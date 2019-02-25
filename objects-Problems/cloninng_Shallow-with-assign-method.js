@@ -123,7 +123,7 @@ const original_Obj = {
 
 let clone = {...original_Obj}
 
-    console.log(original_Obj)   // => { a: 2, b: 5, c: { x: 7, y: 4 } }
+console.log(original_Obj)   // => { a: 2, b: 5, c: { x: 7, y: 4 } }
 console.log(clone)      // => { a: 2, b: 5, c: { x: 7, y: 4 } }
 
 // after reassigning a nested object, I will see both original and clone getting the same update value again

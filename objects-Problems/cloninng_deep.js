@@ -37,6 +37,7 @@ obj.b.c = 20;
 console.log(obj) // => { a: 1, b: { c: 20 } }
 
 console.log(clonedObj)  // => { a: 1, b: { c: 2 } }
+
 /* The clonedObj is no more referencing the same nested object, instead it has created a complete new copy which now persist, even after the nested object's value has been changed
 
 DRAWBACKS OF THE ABOVE - Unfortunately, this method can't be used to copy user-defined object methods. A method is a property of an object that is a function.
