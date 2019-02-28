@@ -92,3 +92,11 @@ router.put("/:id", (req, res, next) => {
   );
 });
 ```
+
+#### Related Explanations why Alternative-2 works
+
+##### JavaScript is single threaded, that means only one statement is executed at a time. As the JS engine processes our script line by line, it uses this single Call-Stack to keep track of codes that are supposed to run in their respective order.
+
+Like what a stack does, a data structure which records lines of executable instructions and executes them in LIFO manner. So say if the engine steps into a function foo(){ it PUSH-es foo() into the stack and when the execution of foo()return; } is over foo() is POP-ped out of the call-stack.
+
+<img src="./sequential-execution-1.png">
