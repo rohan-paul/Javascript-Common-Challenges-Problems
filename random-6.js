@@ -1,62 +1,37 @@
-/*From below data retrun the following format of data for rendering with highchart
+const options = [["2018-02-23", 183.29], ["2018-02-22", 178.99]];
 
-formattedData = [ [ '2019-03-26', 117.910004 ], [ '2019-03-27', 116.769997 ] ]
+console.log(options);
 
- */
+// const getXAxis = arr => {
+//   let xAxisArr = [];
+//   arr.map(i => {
+//     if (Object.entries(i).length !== 0 && i.constructor === Object) {
+//       xAxisArr.push(Object.values(i)[0]);
+//     }
+//   });
+//   return xAxisArr;
+// };
+// //
+// const getXAxis = arr => {
+//   let xAxisArr = [];
+//   arr.map(i => {
+//     if (Object.entries(i).length !== 0 && i.constructor === Object) {
+//       xAxisArr.push(Object.values(i)[0]);
+//     }
+//   });
+//   return xAxisArr;
+// };
 
-const omit = require("lodash.omit");
-const R = require("ramda");
+// console.log(getXAxis(options));
 
-const data = [
-	{
-		Date: "2019-03-26",
-		Open: 118.620003,
-		High: 118.709999,
-		Low: 116.849998,
-		Close: 117.910004
-	},
-	{
-		Date: "2019-03-27",
-		Open: 117.879997,
-		High: 118.209999,
-		Low: 115.519997,
-		Close: 116.769997
-	}
-];
+// const getYAxis = arr => {
+//   let yAxisArr = [];
+//   arr.map(i => {
+//     if (Object.entries(i).length !== 0 && i.constructor === Object) {
+//       yAxisArr.push(Object.values(1)[0]);
+//     }
+//   });
+//   return yAxisArr;
+// };
 
-// Alt-1
-const formattedDataForHighCharts = data => {
-	let result = [];
-	data.map((obj, index) => {
-		for (key in obj) {
-			if (obj.hasOwnProperty("Date") && obj.hasOwnProperty("Close")) {
-				result[index] = [obj["Date"], obj["Close"]];
-			}
-		}
-	});
-	return result;
-};
-
-// console.log(formattedDataForHighCharts(data));
-
-// Alt-2 - Using Lodash
-const formattedDataForHighChartsLodash = data => {
-	return data.map(obj => {
-		let omittedObject = omit(obj, ["Open", "High", "Low"]);
-		return Object.values(omittedObject);
-	});
-};
-
-// console.log(formattedDataForHighChartsLodash(data));
-
-// Alt-3 - Using Ramda
-const formattedDataForHighChartsRamda = data => {
-	return data.map(obj => {
-		let omittedObject = R.omit(["Open", "High", "Low"], obj);
-		return Object.values(omittedObject);
-	});
-};
-
-const resultData = formattedDataForHighChartsRamda(data);
-
-console.log(resultData);
+// console.log(getYAxis(options));
