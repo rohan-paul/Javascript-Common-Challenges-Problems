@@ -36,3 +36,24 @@ const getDateAndClosingPrice = obj => {
 };
 
 console.log(getDateAndClosingPrice(data));
+
+// **************** ANOTHER SLIGHT RESTRUCTURING FOR HIGHCAHRTS OF THE SAME DATA *************
+/* For Highcharts, I need the data in the below format. Where the first element is the xAxis and second element is
+
+[ [ '2019-03-29', '2019-03-28' ], [ '2834.40', '2815.44' ] ]
+
+ */
+
+const getDateAndClosingPrice = obj => {
+	let xAxis = [];
+	let yAxis = [];
+	for (let key in obj) {
+		if (obj.hasOwnProperty(key)) {
+			xAxis.push(key);
+			yAxis.push(parseInt(obj[key].close));
+		}
+	}
+	return [xAxis, yAxis];
+};
+
+console.log(getDateAndClosingPrice(data));
