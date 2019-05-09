@@ -142,20 +142,29 @@ const getYSeriesData = obj => {
 		}
 	}
 
+	const priceBookValueRatio = yAxisSeries.map(i => i[1].priceBookValueRatio);
 	const arrPriceEarningRatio = yAxisSeries.map(i => i[1].priceEarningsRatio);
 	const arrPriceSalesRatio = yAxisSeries.map(i => i[1].priceSalesRatio);
 	const arrEnterpriseValueMultiple = yAxisSeries.map(
 		i => i[1].enterpriseValueMultiple
 	);
+	const priceEarningsToGrowthRatio = yAxisSeries.map(
+		i => i[1].priceEarningsToGrowthRatio
+	);
 
-	set1 = { name: "Price Earnings Ratio", data: arrPriceEarningRatio };
-	set2 = { name: "Price Sales Ratio", data: arrPriceSalesRatio };
-	set3 = {
+	set1 = { name: "Price to Book-Value Ratio", data: priceBookValueRatio };
+	set2 = { name: "Price Earnings Ratio", data: arrPriceEarningRatio };
+	set3 = { name: "Price Sales Ratio", data: arrPriceSalesRatio };
+	set4 = {
 		name: "Enterprise Value Multiple",
 		data: arrEnterpriseValueMultiple
 	};
+	set5 = {
+		name: "PriceEarnings To GrowthRatio",
+		data: priceEarningsToGrowthRatio
+	};
 
-	return [set1, set2, set3];
+	return [set1, set2, set3, set4, set5];
 };
 
 console.log(getYSeriesData(data));
