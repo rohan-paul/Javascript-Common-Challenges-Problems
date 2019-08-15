@@ -24,7 +24,9 @@ console.log(isPrime1(19));
 
 // Cool version with code-golfing. Create array on the fly
 
-const isPrime_cool = n => ![...Array(n).keys()].slice(2).map(i => (n % i)).includes(false) && ![0, 1].includes(n)
+const isPrime_cool = n => ![...Array(n).keys()].slice(2).map(i => !(n%i)).includes(true) && ![0,1].includes(n)
+
+
 
 /* Explanation -
  A> [...Array(5)]  // =>  Creates an array with 5 elements each set as 'undefined'
