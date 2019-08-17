@@ -26,3 +26,9 @@ factorial_Iterative(1000);
 console.timeEnd("fact_Iterative");
 
 console.log("*******************************");
+
+// Cool version to make factorial
+const factorial_cool = n =>
+	[...Array(n + 1).keys()].slice(1).reduce((x, y) => x * y);
+
+console.log(factorial_cool(4)); // => 24
