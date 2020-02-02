@@ -2,36 +2,34 @@
 
 // SOLUTION-1 - Little ugly way
 sumDigits = num => {
+  //create array of number char
+  let numArr = num.toString().split("");
 
-    //create array of number char
-    let numArr = num.toString().split('')
-
-    // If first char is negative symbol let the first numeric element be negative
-    if (numArr[0] === '-') {
-        numArr[1] = '-' + numArr[1]
-        numArr.shift();
-    }
-
-    // Now convert the array of string chars to array of numbers.
-    return numArr.map(str => Number(str)).reduce((accum, curr) => accum + curr)
-
+  // If the original number given was a negative number, only the first character will be negative symbol ( i.e. "-" ), which will also be the first element of the numArr after split. So, in that case, I have to add that symbol to the second element of the above array to make it a negative number. And then remove the first element of numArr (which is that negative symbol "-" )
+  if (numArr[0] === "-") {
+    numArr[1] = "-" + numArr[1];
+    numArr.shift();
   }
 
-  console.log(sumDigits(-316));  // => 4
+  // Now convert the array of string chars to array of numbers.
+  return numArr.map(str => Number(str)).reduce((accum, curr) => accum + curr);
+};
 
-  // SOLUTION-2 - Better -  Instead of splitting the string character-by-character, capture the digits, such that the first digit might be negative.
+console.log(sumDigits(-316)); // => 4
 
-  sumDigits2 = num => {
-      return num.toString()
-         .match(/-?\d/g)
-         .map(s => parseInt(s))
-         .reduce((accum, curr) => accum + curr)
-  }
+// SOLUTION-2 - Better -  Instead of splitting the string character-by-character, capture the digits, such that the first digit might be negative.
 
-  console.log(sumDigits2(-316));  // => 4
+sumDigits2 = num => {
+  return num
+    .toString()
+    .match(/-?\d/g)
+    .map(s => parseInt(s))
+    .reduce((accum, curr) => accum + curr);
+};
 
+console.log(sumDigits2(-316)); // => 4
 
-  /* A) match() with global flag will return an array of all the matches like below -
+/* A) match() with global flag will return an array of all the matches like below -
 
   console.log("-234".match(/-?\d/g))  // => [ '-2', '3', '4' ]
 

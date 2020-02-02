@@ -6,7 +6,8 @@ Run a while loop. start dividing by two and if not divisible increase divider.
 Algorithm -
 1> A Prime Number can be divided evenly only by 1 or itself.
 2> we start the divisor to be the smallest prime number, which is 2.
-2> With the while loop, with each value of n I am divisor is incremented by one.
+3> With a while loop I shall decrease the given number by a factor till it reaches >2 condition.
+4> With the while loop, with each value of n, the divisor is incremented by one.
 
 Example 1: What are the prime factors of 12 ?
 so let's check:

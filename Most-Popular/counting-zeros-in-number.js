@@ -6,7 +6,7 @@ Answer: If n = 100. number of 0 would be 11 (0, 10, 20, 30, 40, 50, 60, 70, 80, 
 
  /* My Note - If I have a number 1 to 50 the value is 5. which is 50 divided by 10. However, if the value is 100. the value is 11. you will get by 100/10 = 10 and 10/10. Thats how you will get in the more zeros in one number like (100, 200, 1000) */
 
-function countZero (num) {
+const countZero = num => {
 
   let counter = 0;
 

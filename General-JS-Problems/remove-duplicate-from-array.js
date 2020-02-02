@@ -1,3 +1,10 @@
+// The simplest with the new Set feature of ES6
+const
+
+const removeDupSet = arr => [...new Set(arr)];
+
+console.log(removeDupSet([1, 2, 2, 8])); //[ 1, 2, 8 ]
+
 // remove duplicate element from an array and return the array
 removeDupFromArr1 = (arr) => {
   let result = []
@@ -41,12 +48,12 @@ removeDupFromArr2 = (arr) => {
 
 // console.log(removeDupFromArr2(myDuplicatedStrArr));
 
-// Using hashMap 
+// Using hashMap
 removeDupFromArr3 = (arr) => {
   let obj = {}, result = [];
 
   /*The above 'obj' will store as its key-value the unique elements of the array (as keys) and a boolean (true for each key). Meaning for any duplicate elements of the given arrray obj[hasOwnProperty] will return false.
-  
+
   Note - Bothe object.key and object[key] accomplish the same thing, i.e. returns the value of that key
   However, object.key only works if the key name is hardwired ( I mean not happening dynamically since it cannot change at run-time). It also does not work when the key is a number instead of a string.
 
@@ -64,8 +71,8 @@ removeDupFromArr3 = (arr) => {
     if (!obj.hasOwnProperty(arr[i])) {
       result.push(arr[i]);
       obj[arr[i]] = true;
-    }     
-    
+    }
+
   }
   return result;
 }
