@@ -1,5 +1,5 @@
 {
-    "name": "js-Small code snippets",
+    "name": "js-small-code-snippets",
     "version": "1.0.0",
     "description": "This repo is just a collection of my JavaScript codes purely for my own learning and practicing random codes",
     "main": "testing-code-3.js",
@@ -33,6 +33,10 @@
         "lodash.differencewith": "^4.5.0",
         "lodash.isequal": "^4.5.0",
         "lodash.omit": "^4.5.0",
+        "lodash.flatten": "^4.4.0",
+        "lodash.map": "^4.6.0",
+        "lodash.partialright": "^4.2.1",
+        "lodash.pick": "^4.4.0",
         "mocha": "^5.2.0",
         "moment": "^2.24.0",
         "moving-averages": "^4.0.5",
