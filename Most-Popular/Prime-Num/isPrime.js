@@ -1,32 +1,34 @@
-
 isPrime1 = num => {
-
-  if (isNaN(num) || !isFinite(num) || (num % 1 !== 0) || num < 2) {
-    return false;
+  if (isNaN(num) || !isFinite(num) || num % 1 !== 0 || num < 2) {
+    return false
   }
 
-/* Explanation of (num % 1 !== 0)  -  This is the standard way to check if a number is a decimal - The logic for (num % 1 !== 0) >>>> ( num % 1 ) will return 0 only if the num is an integer (whole number) but will return a non-zero for all decimal. And so immediately return false in this program.
+  /* Explanation of (num % 1 !== 0)  -  This is the standard way to check if a number is a decimal - The logic for (num % 1 !== 0) >>>> ( num % 1 ) will return 0 only if the num is an integer (whole number) but will return a non-zero for all decimal. And so immediately return false in this program.
 
 console.log(19 % 1)  // => 0
 console.log(19.2 % 1)		// => 0.19999999999999993
 */
 
-  let maxNumToCheckForPrimeness = Math.sqrt(num);
+  let maxNumToCheckForPrimeness = Math.sqrt(num)
 
-  for (let i = 2; i <= maxNumToCheckForPrimeness; i++ )
-    if (num % i === 0) { return false };
-  return true;
+  for (let i = 2; i <= maxNumToCheckForPrimeness; i++)
+    if (num % i === 0) {
+      return false
+    }
+  return true
 }
 
-console.log(isPrime1(19));
+console.log(isPrime1(19))
 
 // Decrease complexity of algorithm from O(n) to O(sqrt(n)) by running the loop until square root of number
 
 // Cool version with code-golfing. Create array on the fly
 
-const isPrime_cool = n => ![...Array(n).keys()].slice(2).map(i => !(n%i)).includes(true) && ![0,1].includes(n)
-
-
+const isPrime_cool = n =>
+  ![...Array(n).keys()]
+    .slice(2)
+    .map(i => !(n % i))
+    .includes(true) && ![0, 1].includes(n)
 
 /* Explanation -
  A> [...Array(5)]  // =>  Creates an array with 5 elements each set as 'undefined'
@@ -45,7 +47,7 @@ E> And so then , with the includes() I check if the array includes any 'false' (
 
 include() method determines whether an array includes a certain element, returning true or false as appropriate.
 
-So upto this part is one boolean condtion. And after && the next booleand condition
+So upto this part is one boolean condition. And after && the next boolean condition
 
 F> ![0, 1].includes(n)  => Means if n is either 0 or 1 return false. That is the first condition of the iterative way to find isPrime
 

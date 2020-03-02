@@ -94,7 +94,7 @@ This method is like _.partial except that partially applied arguments are append
 
 This method is like _.partial except that partially applied arguments are appended to the arguments it receives.
 
-My Notes - So partialRight() is a curry function, meaning it returns a function. And that returned function works as the callback to the lodash's map() function.
+My Notes - So partialRight() is the implementation of 'Partial Application' techniques in function definition. See below for more on this.
 
 
 Agin from official doc of _partial() - https://lodash.com/docs/4.17.15#partial
