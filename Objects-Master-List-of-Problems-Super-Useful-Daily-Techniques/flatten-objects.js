@@ -1,5 +1,4 @@
 /*
-
 I wanted to flatten my deep object to one level depth.
 
 My input:
@@ -25,21 +24,21 @@ const input = {
 My note - Mostly all solutions will involve some implementation of recursion here
  */
 const flattenObject = obj => {
-  let toReturn = {}
+  let flattened = {}
   for (let i in obj) {
-    if (!obj.hasOwnProperty(i)) continue
+    if (!obj.hasOwnProperty(i)) continue // ie. if the object does not have the 'i' property as its own property
 
     if (typeof obj[i] === "object" && obj[i] !== null) {
       var flatObject = flattenObject(obj[i])
       for (let j in flatObject) {
         if (!flatObject.hasOwnProperty(j)) continue
-        toReturn[i + "." + j] = flatObject[j]
+        flattened[i + "." + j] = flatObject[j]
       }
     } else {
-      toReturn[i] = obj[i]
+      flattened[i] = obj[i]
     }
   }
-  return toReturn
+  return flattened
 }
 
 console.log(flattenObject(input))
