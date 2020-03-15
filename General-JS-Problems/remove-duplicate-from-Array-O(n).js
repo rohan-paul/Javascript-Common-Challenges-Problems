@@ -15,23 +15,20 @@ This would take up to O(N * log(N)) time.
 */
 
 returnUnique = arr => {
-
   let seenObj = {}
 
   return arr.reduce((finalArr, currentElem) => {
-
     if (currentElem in seenObj) {
-      return finalArr;
-
+      return finalArr
     } else {
-      seenObj[currentElem] = true;
+      seenObj[currentElem] = true
+      console.log(seenObj)
       return finalArr.concat(currentElem)
     }
   }, [])
-
 }
 
-console.log(returnUnique([1, 4, 2, 2, 3, 4, 8]));
+console.log(returnUnique([1, 4, 2, 2, 3, 4, 8]))
 
 /* In the last line, finalArr.concat(currentElem), I can NOT use finalArr.push() because of the following - (will get error - "array.push not a function" )
 

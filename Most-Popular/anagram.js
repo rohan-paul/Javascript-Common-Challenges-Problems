@@ -47,6 +47,7 @@ function isAnagram_alt2(s1, s2) {
     if (!counter[charCountj]) {
       return false
     }
+    // If the above has not returned false that means that chCode was found, so we have to reduce its count in next step, to make sure if s2 has that same chCode multiple times, it does not return true for the second time
     counter[charCountj]--
   }
   // Now here outside of the second for loop, if any of the character in s2 is not found in s1 the false would have been return inside the loop
@@ -55,3 +56,32 @@ function isAnagram_alt2(s1, s2) {
 }
 
 // console.log(isAnagram_alt2('abc', 'cGa'));
+
+// Now the same above function if I had to use the for..of loop over the two string - the below
+// single liner
+isAnagram_1 = (s1, s2) => {
+  if (s1 === s2) {
+    return true
+  }
+
+  if (s1.length !== s2.length) {
+    return false
+  }
+
+  let counter = {}
+  for (var i of s1) {
+    let chCode = i.charCodeAt(i)
+    // Note above line, I am NOT using s1.charCodeAt(i) - rather I have to invoke the charCodeAt on the exact string element NOT the whole string in this case of for...of loop
+    counter[chCode] = (counter[chCode] || 0) + 1
+  }
+  for (var j of s2) {
+    let chCodej = j.charCodeAt(j)
+    if (!counter[chCodej]) {
+      return false
+    }
+    counter[chCodej]--
+  }
+  return true
+}
+
+console.log(isAnagram_1("ab$c", "bca$")) // true

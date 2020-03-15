@@ -10,33 +10,32 @@ JSON.parse() takes a JSON string and transforms it into a JavaScript object. JSO
 Here’s an example: */
 
 const myObj = {
-  name: 'Skip',
+  name: "Skip",
   age: 2,
-  favoriteFood: 'Steak'
-};
+  favoriteFood: "Steak",
+}
 
-const myObjStr = JSON.stringify(myObj);
+const myObjStr = JSON.stringify(myObj)
 
-console.log(myObjStr);  //  =>  "{"name":"Skip","age":2,"favoriteFood":"Steak"}"
+console.log(myObjStr) //  =>  "{"name":"Skip","age":2,"favoriteFood":"Steak"}"
 // NOTE THE DOUBLE QUOTES ARE PLACED FOR BOTH THE KEY AND VALUE
 
-console.log(JSON.parse(myObjStr));  //  => Object {name:"Skip",age:2,favoriteFood:"Steak"}"
+console.log(JSON.parse(myObjStr)) //  => Object {name:"Skip",age:2,favoriteFood:"Steak"}"
 // NOTE THE DOUBLE QUOTES ARE PLACED FOR ONLY THE VALUE AND NOT THE KEY
 
-
 let obj = {
-    a: 1,
-    b: {
-      c: 2,
-    },
-  }
+  a: 1,
+  b: {
+    c: 2,
+  },
+}
 
 let clonedObj = JSON.parse(JSON.stringify(obj))
 
-obj.b.c = 20;
+obj.b.c = 20
 console.log(obj) // => { a: 1, b: { c: 20 } }
 
-console.log(clonedObj)  // => { a: 1, b: { c: 2 } }
+console.log(clonedObj) // => { a: 1, b: { c: 2 } }
 
 /* The clonedObj is no more referencing the same nested object, instead it has created a complete new copy which now persist, even after the nested object's value has been changed
 
@@ -47,17 +46,21 @@ VERY VERY IMPORTANT POINT - The below shows how Object.assign(), WHILE ALTHOUGH 
 */
 
 let obj = {
-    name: 'Rohan-Paul',
-    exec: function exec() {
-      return true;
-    },
-  }
+  name: "Rohan-Paul",
+  exec: function exec() {
+    return true
+  },
+}
 
-  let method1 = Object.assign({}, obj);
+let method1 = Object.assign({}, obj)
 
-  let method2 = JSON.parse(JSON.stringify(obj));
+/* The Object.assign() method copies all enumerable own properties from one or more source objects to a target object. It returns the target object.
+const returnedTarget = Object.assign(target, source);
+Properties in the target object are overwritten by properties in the sources if they have the same key. Later sources' properties overwrite earlier ones.
+ */
 
+let method2 = JSON.parse(JSON.stringify(obj))
 
-  console.log(method1); // => { name: 'Rohan-Paul', exec: [Function: exec] }
+console.log(method1) // => { name: 'Rohan-Paul', exec: [Function: exec] }
 
-  console.log(method2); // => { name: 'Rohan-Paul' }
+console.log(method2) // => { name: 'Rohan-Paul' }

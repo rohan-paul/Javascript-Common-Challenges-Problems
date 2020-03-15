@@ -5,6 +5,14 @@ const removeDupSet = arr => [...new Set(arr)];
 
 console.log(removeDupSet([1, 2, 2, 8])); //[ 1, 2, 8 ]
 
+removeDupFromArr4 = arr => {
+	return arr.filter((item, index) => arr.indexOf(item) === index);
+};
+
+myDuplicatedStrArr = ["a", "b", "c", "b"];
+
+// console.log(removeDupFromArr4(myDuplicatedStrArr)); // [ 'a', 'b', 'c' ]
+
 // remove duplicate element from an array and return the array
 removeDupFromArr1 = (arr) => {
   let result = []

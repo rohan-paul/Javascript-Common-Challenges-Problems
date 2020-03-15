@@ -9,7 +9,7 @@ console.log(19 % 1)  // => 0
 console.log(19.2 % 1)		// => 0.19999999999999993
 */
 
-  let maxNumToCheckForPrimeness = Math.sqrt(num)
+  let maxNumToCheckForPrimeness = Math.floor(Math.sqrt(num))
 
   for (let i = 2; i <= maxNumToCheckForPrimeness; i++)
     if (num % i === 0) {
@@ -20,7 +20,20 @@ console.log(19.2 % 1)		// => 0.19999999999999993
 
 console.log(isPrime1(19))
 
-// Decrease complexity of algorithm from O(n) to O(sqrt(n)) by running the loop until square root of number
+/* Decrease complexity of algorithm from O(n) to O(sqrt(n)) by running the loop until square root of number
+
+Why do we check up to the square root of a prime number to determine if it is prime?
+
+Simple Ans - Because if a factor is greater than the square root of n, then the other factor that would multiply with it to equal n HAS TO BE less than the square root of n. But in the above implementation, all numbers less than the square-root of n has already been checked for divisibility
+
+If a number n is not a prime, it can be factored into two factors a and b:
+
+n = a * b
+If both a and b were greater than the square root of n, then a * b would be greater than n. So at least one of those factors must be less than or equal to the square root of n, and if we can't find any factors less than or equal to the square root, n must be prime.
+
+Because if we find a factor greater
+
+*/
 
 // Cool version with code-golfing. Create array on the fly
 
