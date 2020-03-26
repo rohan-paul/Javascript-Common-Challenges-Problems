@@ -6,35 +6,36 @@
 
 // METHOD 1: runtime = O(n) & memory = O(n)
 findDup = (list, n) => {
-  let obj = {};
-  let currentElem;
+  let obj = {}
+  let currentElem
 
   for (let i = 0; i < list.length; i++) {
-    currentElem = list[i];
+    currentElem = list[i]
     if (obj[currentElem]) {
       return currentElem
     } else {
-      obj[currentElem] = true;
+      obj[currentElem] = true
     }
   }
 }
 // so the above function will only return the fist occuring duplicate no
 
-myList = [1, 4 , 2, 3, 4, 5, 6, 7, 8, 9, 10];
+myList = [1, 4, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
 // console.log(findDup(myList));
 
 /* METHOD 2: runtime = O(n) & memory = O(1)
-Using the arithmatic sum formulae */
+Using the arithmetic sum formulae
+Note the Arithmetic Sum formulae is (n*(n + 1))/2 i.e. (n2 + n)/2
+ */
 
 findDupAlt = (list, n) => {
-
-  let arithmaticSum = ((n * n) + n)/2;
-  let sumList = 0;
+  let arithmeticSum = (n * n + n) / 2
+  let sumList = 0
   for (let i of list) {
-    sumList += i;
+    sumList += i
   }
-  return sumList - arithmaticSum ;
+  return sumList - arithmeticSum
 }
 
-console.log(findDupAlt(myList, 10));
+console.log(findDupAlt(myList, 10))
