@@ -1,13 +1,17 @@
-// The simplest with the new Set feature of ES6
-const
+const _ = require("lodash")
 
+// Alternative with lodash
+const numbers = [4, 8, 3, 3, 5, 3, 4, 7, 7, 7, 8]
+
+const getUniqueElements4 = _.uniq(numbers)
+console.log(getUniqueElements4) //[ 4, 8, 3, 5, 7 ]
+
+// The simplest with the new Set feature of ES6
 const removeDupSet = arr => [...new Set(arr)];
 
 console.log(removeDupSet([1, 2, 2, 8])); //[ 1, 2, 8 ]
 
-removeDupFromArr4 = arr => {
-	return arr.filter((item, index) => arr.indexOf(item) === index);
-};
+removeDupFromArr4 = arr => arr.filter((item, index) => arr.indexOf(item) === index);
 
 myDuplicatedStrArr = ["a", "b", "c", "b"];
 
