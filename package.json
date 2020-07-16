@@ -29,7 +29,7 @@
         "immutability-helper": "^2.7.1",
         "immutable": "^4.0.0-rc.12",
         "isomorphic-fetch": "^2.2.1",
-        "lodash": "^4.17.11",
+        "lodash": "^4.17.19",
         "lodash.differencewith": "^4.5.0",
         "lodash.flatten": "^4.4.0",
         "lodash.isequal": "^4.5.0",
