@@ -1,59 +1,61 @@
 {
-    "name": "js-small-code-snippets",
-    "version": "1.0.0",
-    "description": "This repo is just a collection of my JavaScript codes purely for my own learning and practicing random codes",
-    "main": "testing-code-3.js",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "repository": {
-        "type": "git",
-        "url": ""
-    },
-    "author": "",
-    "license": "ISC",
-    "bugs": {
-        "url": "https://github.com/rohan-paul/JS-CookBook-and-Random-JS-Code-For-Practicing/issues"
-    },
-    "homepage": "https://github.com/rohan-paul/JS-CookBook-and-Random-JS-Code-For-Practicing#readme",
-    "dependencies": {
-        "bcrypt": "^3.0.4",
-        "chai": "^4.1.2",
-        "data-forge": "^1.7.1",
-        "data-forge-fs": "0.0.6",
-        "data-forge-indicators": "^0.2.4",
-        "data-forge-plot": "^0.3.10",
-        "es6-promise": "^4.2.4",
-        "flat": "^4.1.0",
-        "immer": "^3.1.3",
-        "immutability-helper": "^2.7.1",
-        "immutable": "^4.0.0-rc.12",
-        "isomorphic-fetch": "^2.2.1",
-        "lodash": "^4.17.11",
-        "lodash.differencewith": "^4.5.0",
-        "lodash.flatten": "^4.4.0",
-        "lodash.isequal": "^4.5.0",
-        "lodash.map": "^4.6.0",
-        "lodash.omit": "^4.5.0",
-        "lodash.partialright": "^4.2.1",
-        "lodash.pick": "^4.4.0",
-        "mocha": "^5.2.0",
-        "moment": "^2.24.0",
-        "moving-averages": "^4.0.5",
-        "normalizr": "^3.6.0",
-        "ramda": "^0.26.1",
-        "underscore": "^1.9.1",
-        "z": "0.0.5"
-    },
-    "devDependencies": {
-        "babel-preset-es2015": "^6.24.1",
-        "babel-register": "^6.26.0"
-    },
-    "babel": {
-        "presets": [
-            "es2015"
-        ],
-        "sourceMaps": true,
-        "retainLines": true
-    }
+  "name": "js-small-code-snippets",
+  "version": "1.0.0",
+  "description": "This repo is just a collection of my JavaScript codes purely for my own learning and practicing random codes",
+  "main": "testing-code-3.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rohan-paul/JS-CookBook-and-Random-JS-Code-For-Practicing/issues"
+  },
+  "homepage": "https://github.com/rohan-paul/JS-CookBook-and-Random-JS-Code-For-Practicing#readme",
+  "dependencies": {
+    "bcrypt": "^3.0.4",
+    "chai": "^4.1.2",
+    "data-forge": "^1.7.1",
+    "data-forge-fs": "0.0.6",
+    "data-forge-indicators": "^0.2.4",
+    "data-forge-plot": "^0.6.3",
+    "es6-promise": "^4.2.4",
+    "flat": "^4.1.0",
+    "immer": "^3.1.3",
+    "immutability-helper": "^2.7.1",
+    "immutable": "^4.0.0-rc.12",
+    "isomorphic-fetch": "^2.2.1",
+    "lodash": "^4.17.19",
+    "lodash.differencewith": "^4.5.0",
+    "lodash.flatten": "^4.4.0",
+    "lodash.isequal": "^4.5.0",
+    "lodash.map": "^4.6.0",
+    "lodash.omit": "^4.5.0",
+    "lodash.partialright": "^4.2.1",
+    "lodash.pick": "^4.4.0",
+    "mocha": "^5.2.0",
+    "moment": "^2.24.0",
+    "moving-averages": "^4.0.5",
+    "normalizr": "^3.6.0",
+    "ramda": "^0.26.1",
+    "underscore": "^1.9.1",
+    "z": "0.0.5"
+  },
+  "devDependencies": {
+    "babel-preset-es2015": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "tslint": "^6.1.2",
+    "typescript": "^4.0.0-beta"
+  },
+  "babel": {
+    "presets": [
+      "es2015"
+    ],
+    "sourceMaps": true,
+    "retainLines": true
+  }
 }
