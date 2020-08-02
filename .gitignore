@@ -71,14 +71,10 @@ Project-Note-PAUL
 /.gems
 
 CountDownTimer-Note.odt
-test-code-1.js
-test-code-2.js
-test-code-3.js
-test-code-4.js
-test-code-5.js
-test-code-1.py
+random-code-1.js
+random-code-2.js
+random-code-3.js
 performance-1.js
-
 
 #ignore file name ending in "-bkp.js" OR "-bkp.ts"  OR "-bkp.py"  or "-test.js" OR "-test.ts" in its name. So I will have to put "-test.js" at all files that is just for my development-time random testing code .
 **/*-bkp.js
@@ -87,3 +83,6 @@ performance-1.js
 **/*-test.js
 **/*-test.ts
 **/*-test.py
+**/*-test.ipynb
+**/*-test.md
+**/*-test.json
