@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/rohan-paul/JS-CookBook-and-Random-JS-Code-For-Practicing#readme",
   "dependencies": {
-    "bcrypt": "^3.0.4",
+    "bcrypt": "^5.0.0",
     "chai": "^4.1.2",
     "data-forge": "^1.7.1",
     "data-forge-fs": "0.0.6",
