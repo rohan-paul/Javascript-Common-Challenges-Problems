@@ -44,7 +44,7 @@
     "ramda": "^0.26.1",
     "rxjs": "^6.6.0",
     "ts-loader": "^8.0.1",
-    "underscore": "^1.9.1",
+    "underscore": "^1.12.1",
     "z": "0.0.5"
   },
   "devDependencies": {
