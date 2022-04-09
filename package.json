@@ -38,7 +38,7 @@
     "lodash.partialright": "^4.2.1",
     "lodash.pick": "^4.4.0",
     "mocha": "^5.2.0",
-    "moment": "^2.24.0",
+    "moment": "^2.29.2",
     "moving-averages": "^4.0.5",
     "normalizr": "^3.6.0",
     "ramda": "^0.26.1",
